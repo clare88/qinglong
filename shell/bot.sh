@@ -4,7 +4,7 @@
 dir_shell=/ql/shell
 . $dir_shell/share.sh
 repo_path="${dir_repo}/SuMaiKaDe_jddockerbot"
-url="https://ghproxy.com/https://github.com/SuMaiKaDe/jddockerbot.git"
+url="https://ghproxy.com/https://github.com/clare88/jddockerbot.git"
 
 echo -e "\n1、安装bot依赖...\n"
 apk --no-cache add -f zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
@@ -15,7 +15,7 @@ if [ -d ${repo_path}/.git ]; then
   reset_romote_url ${repo_path} ${url}
   git_pull_scripts ${repo_path}
 else
-  git_clone_scripts ${url} ${repo_path} "master"
+  git_clone_scripts ${url} ${repo_path} "main"
 fi
 
 cp -rf "$repo_path/jbot" $dir_root
